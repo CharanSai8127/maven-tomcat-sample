@@ -1,5 +1,5 @@
 pipeline { 
-    agent { 
+    agent {  
         label 'new-one'
     }
     
