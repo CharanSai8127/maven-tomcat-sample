@@ -9,7 +9,7 @@
     stages {
         
          
-        stage('Compile') {
+        stage('Mvn Compile') {
             steps {
             sh  "mvn compile"
             }
