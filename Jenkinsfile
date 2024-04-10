@@ -1,29 +1,29 @@
- pipeline {     
-    agent any 
+pipeline {
+    agent {
+        label 'new-one'
+    }
     
     tools {
-        jdk 'jdk17'
+        jdk 'jdk 17'
         maven 'maven'
-    } 
+    }
 
     stages {
-        
-         
-        stage('Compile') {
+        stage('Git-Checkout') {
             steps {
-            sh  "mvn compile"
+                git 'https://github.com/CharanSai8127/maven-tomcat-sample.git'
             }
         }
         
-        stage('tests') {
+         stage('Compile') {
             steps {
-                sh "mvn test"
+                sh 'mvn compile'
             }
         }
         
-        stage('Build') {
+         stage('Package') {
             steps {
-                sh "mvn package"
+                sh 'mvn package'
             }
         }
     }
