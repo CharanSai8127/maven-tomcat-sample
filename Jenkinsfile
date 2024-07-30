@@ -9,7 +9,7 @@ pipeline {
     } 
 
     stages {
-        stage('Git-checkout') {
+        stage('Git-Checkout') {
             steps {
                 git 'https://github.com/CharanSai8127/maven-tomcat-sample.git'
             }
