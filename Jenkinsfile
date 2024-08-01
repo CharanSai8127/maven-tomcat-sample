@@ -1,5 +1,5 @@
 pipeline {
-    agent 
+    agent any
     
     tools {
         jdk 'jdk 17'
@@ -13,13 +13,13 @@ pipeline {
             }
         }
         
-         stage('Compile') {
+        stage('Compile') {
             steps {
                 sh 'mvn compile'
             }
         }
         
-         stage('Package') {
+        stage('Package') {
             steps {
                 sh 'mvn package'
             }
